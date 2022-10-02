@@ -1,25 +1,49 @@
-import logo from './logo.svg';
+import React, { Component } from "react";
 import './App.css';
+import Navigation from "./Navigation";
+import UserDetails from "./components/UserDetails";
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import AboutUs from './components/AboutUs';
+import Login from "./components/Login";
+import Pricing from "./Pricing";
 
-function App() {
+class App extends Component {
+  constructor(props) {
+    console.log("Constructor is called before anything else");
+    super(props);
+    this.state = {university: this.props.university};
+  }
+
+  componentDidMount() {
+    console.log("Component mounting");
+    setTimeout(() => {
+      this.setState({university: "JECRC"})
+    }, 5000)
+  }
+
+  componentDidUpdate() {
+    console.log("Component is updated");
+  }
+
+  componentWillUnmount() {
+    console.log("Component is being unmounted");
+  }
+
+  render() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <Router basename="/crud-react">
+        <Navigation></Navigation>
+        This is Loading
+        <Routes>
+          <Route exact path="/" element={<Login />}></Route>
+          <Route path="/users" element={<UserDetails />}></Route>
+          <Route path="/aboutus" element={<AboutUs />}></Route>
+          <Route path="/pricing" element={<Pricing />}></Route>
+
+        </Routes>
+      </Router>
   );
+}
 }
 
 export default App;
