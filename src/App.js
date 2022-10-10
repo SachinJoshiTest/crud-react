@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, useState } from "react";
 import './App.css';
 import Navigation from "./Navigation";
 import UserDetails from "./components/UserDetails";
@@ -6,44 +6,24 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import AboutUs from './components/AboutUs';
 import Login from "./components/Login";
 import Pricing from "./Pricing";
+import { Button } from "react-bootstrap";
+import Home from "./components/Home";
 
-class App extends Component {
-  constructor(props) {
-    console.log("Constructor is called before anything else");
-    super(props);
-    this.state = {university: this.props.university};
-  }
-
-  componentDidMount() {
-    console.log("Component mounting");
-    setTimeout(() => {
-      this.setState({university: "JECRC"})
-    }, 5000)
-  }
-
-  componentDidUpdate() {
-    console.log("Component is updated");
-  }
-
-  componentWillUnmount() {
-    console.log("Component is being unmounted");
-  }
-
-  render() {
+function App() {
+  const [count, setCount] = useState(1);
   return (
-      <Router basename="/crud-react">
+      <Router>
         <Navigation></Navigation>
-        This is Loading
         <Routes>
-          <Route exact path="/" element={<Login />}></Route>
-          <Route path="/users" element={<UserDetails />}></Route>
-          <Route path="/aboutus" element={<AboutUs />}></Route>
-          <Route path="/pricing" element={<Pricing />}></Route>
-
+          <Route exact path="/crud-react/" element={<Login />}></Route>
+          <Route exact path="/crud-react/users" element={<UserDetails />}></Route>
+          <Route exact path="/crud-react/aboutus" element={<AboutUs />}></Route>
+          <Route exact path="/crud-react/pricing" element={<Pricing />}></Route>
+          <Route exact path="/crud-react/home" element={<Home />}></Route>
         </Routes>
       </Router>
+
   );
-}
 }
 
 export default App;

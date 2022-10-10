@@ -25,12 +25,12 @@ class Navigation extends Component {
       return (
         <Navbar bg="dark" variant="dark">
             <Container>
-            <Navbar.Brand href="/crud-react/home">Book Management</Navbar.Brand>
+            <Navbar.Brand href="/crud-react/home">LN Hostel</Navbar.Brand>
             <Nav className="me-auto">
-                <Nav.Link href="/crud-react/home">Home</Nav.Link>
-                <Nav.Link href="/crud-react/users">Users</Nav.Link>
-                <Nav.Link href="/crud-react/pricing">Pricing</Nav.Link>
-                <Nav.Link href="/crud-react/aboutus">Aboutus</Nav.Link>
+                <Nav.Link href="/crud-react/home">Students</Nav.Link>
+                <Nav.Link href="/crud-react/users">Fees</Nav.Link>
+                <Nav.Link href="/crud-react/pricing">Rooms</Nav.Link>
+                <Nav.Link href="/crud-react/aboutus">Facilities</Nav.Link>
             </Nav>
             </Container>
         </Navbar>
