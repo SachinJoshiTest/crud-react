@@ -31,6 +31,7 @@ class Navigation extends Component {
                 <Nav.Link href="/crud-react/users">Fees</Nav.Link>
                 <Nav.Link href="/crud-react/pricing">Rooms</Nav.Link>
                 <Nav.Link href="/crud-react/aboutus">Facilities</Nav.Link>
+                <Nav.Link href="/crud-react/resumeBuilder">Resume Builder</Nav.Link>
             </Nav>
             </Container>
         </Navbar>

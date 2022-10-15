@@ -6,8 +6,8 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import AboutUs from './components/AboutUs';
 import Login from "./components/Login";
 import Pricing from "./Pricing";
-import { Button } from "react-bootstrap";
 import Home from "./components/Home";
+import ResumeBuilder from "./components/ResumeBuilder";
 
 function App() {
   const [count, setCount] = useState(1);
@@ -20,6 +20,7 @@ function App() {
           <Route exact path="/crud-react/aboutus" element={<AboutUs />}></Route>
           <Route exact path="/crud-react/pricing" element={<Pricing />}></Route>
           <Route exact path="/crud-react/home" element={<Home />}></Route>
+          <Route exact path="/crud-react/resumeBuilder" element={<ResumeBuilder />}></Route>
         </Routes>
       </Router>
 
